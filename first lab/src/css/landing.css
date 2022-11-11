@@ -51,7 +51,7 @@ body {
   z-index: 100;
 }
 
-#header-input_menu,
+.input-menu,
 .header-hamburger {
   display: none;
 }

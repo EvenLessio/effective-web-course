@@ -148,7 +148,7 @@ li:first-child{
 
 /*MAIN-REPRESENT*/
 main{
-  background: url(/imgs/main/dots.svg) no-repeat, url(/imgs/main/rectangle.png) no-repeat;
+  background: url(../imgs/main/dots.svg) no-repeat, url(/imgs/main/rectangle.png) no-repeat;
   background-position: top right;
   background-size: auto;
 }
@@ -238,17 +238,7 @@ main{
   line-height: 32px;
   color: #2D3436;
 }
-.yellow-rect{
-  grid-row:span 3;
-  margin-top: auto;
-  margin-bottom: auto;
-
-  background: #FDCB6E;
-  border-radius: 20px;
-  width: 270px;
-  height: 464px;
-}
-.cyan-rect{
+.first-grid-shape{
   grid-column: span 2;
   grid-row: span 3;
   margin-top: auto;
@@ -258,7 +248,19 @@ main{
   width: 470px;
   height: 380px;
 }
-.lpurple-rect{
+
+.second-grid-shape{
+  grid-row:span 3;
+  margin-top: auto;
+  margin-bottom: auto;
+
+  background: #FDCB6E;
+  border-radius: 20px;
+  width: 270px;
+  height: 464px;
+}
+
+.third-grid-shape{
   margin-top: auto;
 
   background: #A29BFE;
@@ -266,7 +268,7 @@ main{
   width: 170px;
   height: 222px;
 }
-.blue-rect{
+.fourth-grid-shape{
   margin-top: auto;
 
   background: #0984E3;
@@ -274,7 +276,7 @@ main{
   width: 170px;
   height: 222px;
 }
-.pink-rect{
+.fifth-grid-shape{
   grid-row: span 2;
 
   background: #E84393;
@@ -282,7 +284,7 @@ main{
   width: 270px;
   height: 284px;
 }
-.dpurple-rect{
+.sixth-grid-shape{
   grid-row: span 2;
   grid-column: span 2;
 
@@ -291,7 +293,7 @@ main{
   width: 370px;
   height: 356px;
 }
-.red-rect{
+.seventh-grid-shape{
   grid-row: span 2;
   background: #FF7675;
   border-radius: 20px;

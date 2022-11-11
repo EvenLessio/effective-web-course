@@ -148,7 +148,7 @@ li:first-child{
 
 /*MAIN-REPRESENT*/
 main{
-  background: url(../imgs/main/dots.svg) no-repeat, url(/imgs/main/rectangle.png) no-repeat;
+  background: url(/imgs/main/dots.svg) no-repeat, url(/imgs/main/rectangle.png) no-repeat;
   background-position: top right;
   background-size: auto;
 }

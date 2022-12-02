@@ -1,0 +1,48 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Slider</title>
+    <link rel="stylesheet" href="./src/css/landing.css" />
+  </head>
+  <body>
+    <main>
+      <div class="carousel">
+        <button class="carousel__button carousel__button--left" id="button1">
+        <img 
+          src="img/arrowLeft.png"
+          />
+        </button>
+        <div class="carousel__track-container">
+          <ul class="carousel__track">
+            <li class="carousel__slide">
+              <img class="carousel__slide__image" src="img/image-1.jpg" alt="FirstImage">
+            </li>
+            <li class="carousel__slide">
+              <img class="carousel__slide__image" src="img/image-2.jpg" alt="SecondImage">
+            </li>
+            <li class="carousel__slide">
+              <img class="carousel__slide__image" src="img/image-3.jpg" alt="ThirdImage">
+            </li>
+            <li class="carousel__slide">
+              <img class="carousel__slide__image" src="img/image-4.jpg" alt="FourthImage">
+            </li>
+          </ul>
+        </div>
+        <button class="carousel__button carousel__button--right" id="button2">
+        <img 
+          src="img/arrowRight.png"
+          />
+        </button>
+        <div class="carousel__nav">
+          <button class="carousel__indicator"></button>
+          <button class="carousel__indicator"></button>
+          <button class="carousel__indicator"></button>
+          <button class="carousel__indicator"></button>
+        </div>
+      </div>
+    </main>
+  </body>
+  <script src="./index.js"></script>
+</html>

@@ -1,14 +1,11 @@
 const minInput = document.getElementById("minInput");
 const secInput = document.getElementById("secInput");
-
 const startButton = document.getElementById("startButton");
 const stopButton = document.getElementById("stopButton");
 const resetButton = document.getElementById("resetButton");
-
 const oneMin = document.getElementById("oneMin");
 const fiveMin = document.getElementById("fiveMin");
 const tenMin = document.getElementById("tenMin");
-
 const audio = new Audio("./assets/notification.mp3");
 
 let isStopped = true;
@@ -26,6 +23,9 @@ if (localStorage.minutes) {
   minutes = parseInt(localStorage.minutes);
 } else {
   localStorage.setItem("minutes", 0);
+}
+if (!localStorage.isStarted) {
+  localStorage.setItem("isStarted", false);
 }
 
 const inputsOnChange = (min, sec) => {
@@ -49,20 +49,17 @@ const inputsOnChange = (min, sec) => {
 }
 
 const onFinish = () => {
-  if (localStorage.isFinished) {
-    if (localStorage.isFinished === "false") {
-      audio.play()
-      isStopped = true;
-      stopButton.disabled = true;
-      resetButton.disabled = false;
+  if (localStorage.isStarted === "true") {
+    audio.play()
+    isStopped = true;
+    stopButton.disabled = true;
+    resetButton.disabled = false;
+    
+    minInput.readOnly = false;
+    secInput.readOnly = false;
 
-      minInput.readOnly = false;
-      secInput.readOnly = false;
-    }
-  } else {
-    localStorage.setItem("isFinished", "true");
-  }
-
+    body.classList.add("onFinish");
+  }  
 }
 
 const timer = setInterval(() => {
@@ -86,13 +83,12 @@ const startTimer = () => {
     oneMin.disabled = true;
     fiveMin.disabled = true;
     tenMin.disabled = true;
-
+    
     minInput.readOnly = true;
     secInput.readOnly = true;
 
-    localStorage.isFinished = "false";
+    localStorage.isStarted = "true";
   }
-
 
 }
 
@@ -103,7 +99,7 @@ const stopTimer = () => {
 }
 
 const resetTimer = () => {
-  localStorage.isFinished = "true";
+  localStorage.isStarted = "false";
 
   isStopped = true;
   oneMin.disabled = false;
@@ -116,6 +112,7 @@ const resetTimer = () => {
   localStorage.minutes = 0;
   localStorage.seconds = 0;
   inputsOnChange(localStorage.minutes, localStorage.seconds);
+  body.classList.remove("onFinish");
 }
 
 const addMinutes = (mins) => {
@@ -133,7 +130,9 @@ tenMin.disabled = true;
 resetButton.disabled = false;
 
 inputsOnChange(minutes, seconds);
-stopTimer();
+if (localStorage.isStarted === "true") {
+  startTimer();
+}
 
 startButton.addEventListener("click", startTimer);
 stopButton.addEventListener("click", stopTimer);
